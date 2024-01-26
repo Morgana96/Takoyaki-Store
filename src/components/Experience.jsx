@@ -12,7 +12,7 @@ import { useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 import { Color } from "three";
 import { degToRad, lerp } from "three/src/math/MathUtils";
-import { Camping } from "./Camping";
+import { Takoyaki } from "./Takoyaki";
 import { currentPageAtom } from "./UI";
 
 const bloomColor = new Color("#fff");
@@ -71,15 +71,15 @@ export const Experience = () => {
       </mesh>
       <Text
         font={"fonts/Poppins-Black.ttf"}
-        position-x={-1.3}
+        position-x={0}
         position-y={-0.5}
         position-z={1}
         lineHeight={0.8}
         textAlign="center"
-        rotation-y={degToRad(30)}
+        // rotation-y={degToRad(30)}
         anchorY={"bottom"}
       >
-        MY LITTLE{"\n"}CAMPING
+        Takoyaki Store
         <meshBasicMaterial
           color={bloomColor}
           toneMapped={false}
@@ -89,8 +89,8 @@ export const Experience = () => {
             <color attach="background" args={["#fff"]} />
             <Environment preset="sunset" />
             <Float floatIntensity={4} rotationIntensity={5}>
-              <Camping
-                scale={1.6}
+              <Takoyaki
+                scale={0.5}
                 rotation-y={-degToRad(25)}
                 rotation-x={degToRad(40)}
                 position-y={-0.5}
@@ -99,15 +99,15 @@ export const Experience = () => {
           </RenderTexture>
         </meshBasicMaterial>
       </Text>
-      <group rotation-y={degToRad(-25)} position-x={3}>
-        <Camping scale={0.6} html />
-        <mesh ref={meshFitCameraStore} visible={false}>
-          <boxGeometry args={[2, 1, 2]} />
+      <group rotation-y={degToRad(-25)} position-x={3} position-z={-30}>
+        <Takoyaki scale={0.6} html />
+        <mesh ref={meshFitCameraStore} scale={4} position-y={2.5} visible={false}>
+          <boxGeometry args={[2, 2, 2]} />
           <meshBasicMaterial color="red" transparent opacity={0.5} />
         </mesh>
       </group>
       <mesh position-y={-0.48} rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[100, 100]} />
+        <planeGeometry args={[500, 500]} />
         <MeshReflectorMaterial
           blur={[100, 100]}
           resolution={2048}
