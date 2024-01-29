@@ -85,7 +85,7 @@ export const Experience = () => {
           toneMapped={false}
           ref={textMaterial}
         >
-          <RenderTexture attach={"map"}>
+          {/* <RenderTexture attach={"map"}>
             <color attach="background" args={["#fff"]} />
             <Environment preset="sunset" />
             <Float floatIntensity={4} rotationIntensity={5}>
@@ -96,7 +96,7 @@ export const Experience = () => {
                 position-y={-0.5}
               />
             </Float>
-          </RenderTexture>
+          </RenderTexture> */}
         </meshBasicMaterial>
       </Text>
       <group rotation-y={degToRad(-25)} position-x={3} position-z={-30}>
